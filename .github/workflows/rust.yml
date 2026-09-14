@@ -1,0 +1,34 @@
+name: Rust CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build Lab 1
+        run: cd lab1 && cargo check
+
+      - name: Build Lab 2
+        run: cd lab2 && cargo check
+
+      - name: Build Lab 3
+        run: cd lab3 && cargo check
+
+      - name: Build Lab 4
+        run: cd lab4 && cargo check
+
+      - name: Build Lab 5
+        run: cd lab5 && cargo check
+
+      - name: Build Lab 6
+        run: cd lab6 && cargo check
